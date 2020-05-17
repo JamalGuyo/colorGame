@@ -1,12 +1,5 @@
 // TODO: create a random color
-let colors = [
-  "rgb(255, 0, 0)",
-  "rgb(255, 255, 0)",
-  "rgb(0, 0, 255)",
-  "rgb(255, 0, 255)",
-  "rgb(0, 255, 0)",
-  "rgb(0, 255, 255)",
-];
+let colors = generateRandomColors(6);
 // select all the div with class of square
 let squares = document.querySelectorAll(".square");
 
@@ -50,4 +43,30 @@ function changeColors(color) {
 function pickColor() {
   let random = Math.floor(Math.random() * colors.length);
   return colors[random];
+}
+
+// generate array of random colors
+function generateRandomColors(num) {
+  // make an array
+  let arr = [];
+  // repeat num times
+  for (let i = 0; i < num; i++) {
+    // add random color to array
+    arr.push(randomColor());
+  }
+
+  // return array
+  return arr;
+}
+
+// generate random color
+function randomColor() {
+  // randomly select red. 0-255.
+  let r = Math.floor(Math.random() * 256);
+  // randomly select green. 0-255.
+  let g = Math.floor(Math.random() * 256);
+  // randomly select blue. 0-255.
+  let b = Math.floor(Math.random() * 256);
+  // return random color
+  return `rgb(${r}, ${g}, ${b})`;
 }
