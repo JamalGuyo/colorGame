@@ -57,11 +57,11 @@ hardBtn.addEventListener("click", () => {
 let resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", function () {
   // reset background of h1
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "steelblue";
   // reset messageDisplay to default
   messageDisplay.textContent = "";
   // reset button text
-  resetButton.textContent = "New Colors";
+  this.textContent = "New Colors";
   // generate new random colors
   colors = generateRandomColors(numSquares);
   // pick new color
