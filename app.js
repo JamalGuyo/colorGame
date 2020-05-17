@@ -11,7 +11,7 @@ let colors = [
 let squares = document.querySelectorAll(".square");
 
 // picked color
-let pickedColor = colors[3];
+let pickedColor = pickColor();
 let colorDisplay = document.querySelector("#colorDisplay");
 colorDisplay.textContent = pickedColor;
 
@@ -38,10 +38,16 @@ for (let i = 0, n = squares.length; i < n; i++) {
 }
 
 // change all colors if picked color is correct
-const changeColors = (color) => {
+function changeColors(color) {
   // loop through squares
   for (let i = 0, n = squares.length; i < n; i++) {
     // change color of the squares to the picked color
     squares[i].style.backgroundColor = color;
   }
-};
+}
+
+// randomly pick color
+function pickColor() {
+  let random = Math.floor(Math.random() * colors.length);
+  return colors[random];
+}
