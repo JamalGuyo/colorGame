@@ -1,5 +1,7 @@
-// TODO: create a random color
-let colors = generateRandomColors(6);
+let numSquares = 6;
+// create a random color
+let colors = generateRandomColors(numSquares);
+
 // select all the div with class of square
 let squares = document.querySelectorAll(".square");
 
@@ -10,8 +12,47 @@ colorDisplay.textContent = pickedColor;
 
 // message to display
 let messageDisplay = document.querySelector("#messageDisplay");
+
 // select h1
 let h1 = document.querySelector("h1");
+
+// easy and hard btn
+let easyBtn = document.querySelector("#easyBtn");
+let hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", () => {
+  easyBtn.classList.add("selected");
+  hardBtn.classList.remove("selected");
+  // generate 3 colors
+  numSquares = 3;
+  colors = generateRandomColors(numSquares);
+  // pick color
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (let i = 0; i < squares.length; i++) {
+    if (colors[i]) {
+      squares[i].style.backgroundColor = colors[i];
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
+});
+
+hardBtn.addEventListener("click", () => {
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+  // generate 6 colors
+  numSquares = 6;
+  colors = generateRandomColors(numSquares);
+  // pick color
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+    squares[i].style.display = "block";
+  }
+});
+
 // reset button
 let resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", function () {
@@ -22,7 +63,7 @@ resetButton.addEventListener("click", function () {
   // reset button text
   resetButton.textContent = "New Colors";
   // generate new random colors
-  colors = generateRandomColors(6);
+  colors = generateRandomColors(numSquares);
   // pick new color
   pickedColor = pickColor();
   // set colorDisplay to picked color

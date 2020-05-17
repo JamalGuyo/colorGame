@@ -1,27 +1,30 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-body{
-    background-color: #232323;
+body {
+  background-color: #232323;
 }
-h1{
-    color: white;
+h1 {
+  color: white;
 }
-#stripe{
-    background: #ffffff;
-    height: 30px;
-    text-align: center  ;
+#stripe {
+  background: #ffffff;
+  height: 30px;
+  text-align: center;
 }
-#container{
-    max-width: 600px;
-    margin: 0 auto;
+#container {
+  max-width: 600px;
+  margin: 0 auto;
 }
-.square{
-    background-color: purple;
-    width: 30%;
-    padding-bottom: 30%;
-    margin: 1.66%;
-    float: left;
+.square {
+  background-color: purple;
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  float: left;
+}
+.selected {
+  background: blue;
 }
