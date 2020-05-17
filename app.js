@@ -12,6 +12,26 @@ colorDisplay.textContent = pickedColor;
 let messageDisplay = document.querySelector("#messageDisplay");
 // select h1
 let h1 = document.querySelector("h1");
+// reset button
+let resetButton = document.querySelector("#reset");
+resetButton.addEventListener("click", function () {
+  // reset background of h1
+  h1.style.backgroundColor = "#232323";
+  // reset messageDisplay to default
+  messageDisplay.textContent = "";
+  // reset button text
+  resetButton.textContent = "New Colors";
+  // generate new random colors
+  colors = generateRandomColors(6);
+  // pick new color
+  pickedColor = pickColor();
+  // set colorDisplay to picked color
+  colorDisplay.textContent = pickedColor;
+  // change colors of squares
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+  }
+});
 
 // loop through all the divs
 for (let i = 0, n = squares.length; i < n; i++) {
@@ -25,6 +45,7 @@ for (let i = 0, n = squares.length; i < n; i++) {
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct!";
       changeColors(pickedColor);
+      resetButton.textContent = "Play Again!";
       h1.style.backgroundColor = pickedColor;
     } else {
       this.style.backgroundColor = "#232323";

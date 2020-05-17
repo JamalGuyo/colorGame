@@ -9,8 +9,10 @@ body{
 h1{
     color: white;
 }
-#messageDisplay{
-    color: white;
+#stripe{
+    background: #ffffff;
+    height: 30px;
+    text-align: center  ;
 }
 #container{
     max-width: 600px;
