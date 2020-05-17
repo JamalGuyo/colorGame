@@ -10,6 +10,8 @@ colorDisplay.textContent = pickedColor;
 
 // message to display
 let messageDisplay = document.querySelector("#messageDisplay");
+// select h1
+let h1 = document.querySelector("h1");
 
 // loop through all the divs
 for (let i = 0, n = squares.length; i < n; i++) {
@@ -23,6 +25,7 @@ for (let i = 0, n = squares.length; i < n; i++) {
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct!";
       changeColors(pickedColor);
+      h1.style.backgroundColor = pickedColor;
     } else {
       this.style.backgroundColor = "#232323";
       messageDisplay.textContent = "Try Again!";
