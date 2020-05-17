@@ -15,6 +15,9 @@ let pickedColor = colors[3];
 let colorDisplay = document.querySelector('#colorDisplay');
 colorDisplay.textContent = pickedColor;
 
+// message to display
+let messageDisplay = document.querySelector('#messageDisplay');
+
 // loop through all the divs
 for(let i = 0, n = squares.length; i < n; i++){
     // add initial colors to squares
@@ -25,9 +28,10 @@ for(let i = 0, n = squares.length; i < n; i++){
         let clickedColor = this.style.backgroundColor;
         // compare with picked color
         if(clickedColor === pickedColor){
-            alert('correct!');
+            messageDisplay.textContent = 'Correct!';
         }else{
-            alert('wrong!');
+            this.style.backgroundColor = '#232323';
+            messageDisplay.textContent = 'Try Again!';
         }
     })
 }
